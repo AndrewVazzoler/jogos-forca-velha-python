@@ -26,7 +26,7 @@ def velha(m):
 
 def valida_jogada(jogada, jogador, matriz):
     valida = False
-    if(jogada):
+    if bool(jogada):
         for x in range(3):
             for z in range(3):
                 if int(jogada) == matriz[x][z]:
@@ -42,7 +42,7 @@ def fazer_jogada(jogador, matriz):
         jogada = input("Informe sua jogada, jogador {}: ".format(jogador))
         validaJogada = valida_jogada(jogada, jogador, matriz)
         
-        if(validaJogada[0]):
+        if validaJogada[0]:
             return validaJogada[1]
         else:
             print("Jogada invalida!")
@@ -85,12 +85,12 @@ def main():
         cabecalho()
         velha(matriz)
 
-        if(ganhador):
+        if ganhador:
             print("\nParabens jogador {} \n".format(ganhador))
             continuar = False
             time.sleep(3)
 
-        if(jogadas == 9 and not ganhador):
+        if jogadas == 9 and not ganhador:
             print("\nDeu velha!!!\n")
             continuar = False
             time.sleep(3)

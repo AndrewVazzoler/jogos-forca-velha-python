@@ -92,6 +92,14 @@ def op_jogo():
             valido = True
     return op
 
+def obter_palpite():
+    valido = False
+    while not valido:
+        letra = input('Digite uma letra: ').upper()
+        if len(letra) == 1:
+            return letra
+        else:
+            print("Palpite invalido!")    
 
 def start_jogo(palavra):
     lista_letra_palavra = list(palavra)
@@ -108,7 +116,7 @@ def start_jogo(palavra):
     stop = False
     while not stop:
 
-        letra = input('Digite uma letra: ').upper()
+        letra = obter_palpite()
 
         palpite_valido = verifica_palpite(
             palpites, palpites_corretos, palpites_errados, lista_letra_palavra, letra)
